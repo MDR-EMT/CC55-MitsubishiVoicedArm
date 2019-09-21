@@ -1,0 +1,27 @@
+Prototipo UI:
+Dividir la ventana en 3 separaciones para la UI
+
+Integración Modelo 3D básico
+
+Integración de Botones al UI
+
+Pantalla de código
+
+Mejora del modelo 3D brazo mecánico:
+
+
+Integración del esqueleto del brazo mecánico:
+
+
+Integración formal del lenguaje MelphaBasic5:
+
+
+Validación de restricciones de movimiento:
+
+
+Asignación de guardado de funciones en modo UI:
+
+
+Exportar código MelphaBasic5 en un archivo:
+
+
