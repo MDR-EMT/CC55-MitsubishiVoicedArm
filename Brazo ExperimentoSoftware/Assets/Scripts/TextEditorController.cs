@@ -14,12 +14,13 @@ public class TextEditorController : MonoBehaviour
     public Text PitchText;
     public Text RollText;
 
-    public enum commandLines {SAVE, LOAD, MOV, ROT, WHILE, WEND, OVRD};
+    public enum commandLines {SAVE, LOAD, MOV, ROT, WHILE, WEND, OVRD, DEF,POS};
     public enum movParts {WAIST, SHOUDLER, ELBOW, TWIST, PITCH, ROLL};
 
     void Start()
     {
-        TextBox = GetComponent<Text>();
+        TextBox.text ="";
+
         WaistText.text ="";
         ShoulderText.text ="";
         ElbowText.text ="";
@@ -29,28 +30,28 @@ public class TextEditorController : MonoBehaviour
     }
 
     public void WriteCommands(commandLines order, GameObject mobile){
-        TextBox.text += order.ToString() + mobile.transform.position.ToString() + "\n";
+        TextBox.text += order.ToString() + mobile.transform.eulerAngles.ToString() + "\n";
     }
 
     public void UpdateText(movParts option, GameObject mobile){
         switch(option){
             case movParts.WAIST:
-                WaistText.text = mobile.transform.rotation.y.ToString();
+                WaistText.text = mobile.transform.eulerAngles.y.ToString();
                 break;
             case movParts.SHOUDLER:
-                ShoulderText.text = mobile.transform.rotation.y.ToString();
+                ShoulderText.text = mobile.transform.eulerAngles.y.ToString();
                 break;
             case movParts.ELBOW:
-                ElbowText.text = mobile.transform.rotation.y.ToString();
+                ElbowText.text = mobile.transform.eulerAngles.y.ToString();
                 break;
             case movParts.TWIST:
-                TwistText.text = mobile.transform.rotation.y.ToString();
+                TwistText.text = mobile.transform.eulerAngles.y.ToString();
                 break;
             case movParts.PITCH:
-                PitchText.text = mobile.transform.rotation.y.ToString();
+                PitchText.text = mobile.transform.eulerAngles.y.ToString();
                 break;
             case movParts.ROLL:
-                RollText.text = mobile.transform.rotation.y.ToString();
+                RollText.text = mobile.transform.eulerAngles.y.ToString();
                 break;
             default:
                 break;

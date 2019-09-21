@@ -1117,7 +1117,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max: 200
   Min: -200
-  textBox: {fileID: 0}
+  initAngle: 0
+  textBox: {fileID: 180827390}
+  textEditor: {fileID: 336205891}
+  movePart: 3
 --- !u!1 &180827388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1133,7 @@ GameObject:
   - component: {fileID: 180827391}
   - component: {fileID: 180827390}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: Placeholder_Twist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1799,12 +1802,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextBox: {fileID: 386134219}
-  WaistText: {fileID: 1694515640}
-  ShoulderText: {fileID: 70516816}
-  ElbowText: {fileID: 1082056538}
-  TwistText: {fileID: 1358965116}
-  PitchText: {fileID: 2061723460}
-  RollText: {fileID: 2130588387}
+  WaistText: {fileID: 1938707470}
+  ShoulderText: {fileID: 1724561885}
+  ElbowText: {fileID: 1478201196}
+  TwistText: {fileID: 180827390}
+  PitchText: {fileID: 1722233578}
+  RollText: {fileID: 487680828}
 --- !u!114 &336205892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2021,7 +2024,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  m_Text: GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 --- !u!222 &386134220
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2438,7 +2441,7 @@ GameObject:
   - component: {fileID: 487680829}
   - component: {fileID: 487680828}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: Placeholder_Roll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3274,7 +3277,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max: 810100000
   Min: -800000000
-  textBox: {fileID: 0}
+  initAngle: 0
+  textBox: {fileID: 487680828}
+  textEditor: {fileID: 336205891}
+  movePart: 5
 --- !u!65 &612151448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3494,7 +3500,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 704397069}
   m_TextComponent: {fileID: 1358965116}
-  m_Placeholder: {fileID: 180827390}
+  m_Placeholder: {fileID: 1358965116}
   m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
@@ -3811,7 +3817,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 784982154}
   m_TextComponent: {fileID: 1694515640}
-  m_Placeholder: {fileID: 1938707470}
+  m_Placeholder: {fileID: 1694515640}
   m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
@@ -4509,7 +4515,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 984387200}
   m_TextComponent: {fileID: 1082056538}
-  m_Placeholder: {fileID: 1478201196}
+  m_Placeholder: {fileID: 1082056538}
   m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
@@ -5118,7 +5124,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1843864972}
+      - m_Target: {fileID: 0}
         m_MethodName: RotateUp
         m_Mode: 1
         m_Arguments:
@@ -5462,7 +5468,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1114867235}
   m_TextComponent: {fileID: 2061723460}
-  m_Placeholder: {fileID: 1722233578}
+  m_Placeholder: {fileID: 2061723460}
   m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
@@ -5899,7 +5905,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2117213198}
+      - m_Target: {fileID: 0}
         m_MethodName: RotateRight
         m_Mode: 1
         m_Arguments:
@@ -6402,7 +6408,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2117213198}
+      - m_Target: {fileID: 0}
         m_MethodName: RotateLeft
         m_Mode: 1
         m_Arguments:
@@ -6544,7 +6550,7 @@ GameObject:
   - component: {fileID: 1478201197}
   - component: {fileID: 1478201196}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: Placeholder_Elbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7065,7 +7071,7 @@ GameObject:
   - component: {fileID: 1722233579}
   - component: {fileID: 1722233578}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: Placeholder_Pitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7213,7 +7219,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1723224113}
   m_TextComponent: {fileID: 70516816}
-  m_Placeholder: {fileID: 1724561885}
+  m_Placeholder: {fileID: 70516816}
   m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
@@ -7289,7 +7295,7 @@ GameObject:
   - component: {fileID: 1724561886}
   - component: {fileID: 1724561885}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: Placeholder_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7680,7 +7686,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1824486977}
   m_TextComponent: {fileID: 2130588387}
-  m_Placeholder: {fileID: 487680828}
+  m_Placeholder: {fileID: 2130588387}
   m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
@@ -7793,7 +7799,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max: 120
   Min: -120
-  textBox: {fileID: 0}
+  initAngle: 0
+  textBox: {fileID: 1722233578}
+  textEditor: {fileID: 336205891}
+  movePart: 4
 --- !u!65 &1841168501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7865,7 +7874,6 @@ GameObject:
   - component: {fileID: 1843864971}
   - component: {fileID: 1843864970}
   - component: {fileID: 1843864969}
-  - component: {fileID: 1843864972}
   - component: {fileID: 1843864973}
   m_Layer: 0
   m_Name: Shoulder
@@ -7949,23 +7957,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843864967}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1843864972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843864967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f6139ae5bc711743ae9cfc3608384eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body_transform: {fileID: 0}
-  Min_Limit: -15
-  Max_Limit: 15
-  showText: {fileID: 576797443}
-  LinesPrinted: 0
 --- !u!114 &1843864973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7980,7 +7971,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max: 120
   Min: -120
-  textBox: {fileID: 0}
+  initAngle: 0
+  textBox: {fileID: 1724561885}
+  textEditor: {fileID: 336205891}
+  movePart: 1
 --- !u!1 &1867782160
 GameObject:
   m_ObjectHideFlags: 0
@@ -8341,7 +8335,7 @@ GameObject:
   - component: {fileID: 1938707471}
   - component: {fileID: 1938707470}
   m_Layer: 5
-  m_Name: Placeholder
+  m_Name: Placeholder_Waist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8490,7 +8484,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1843864972}
+      - m_Target: {fileID: 0}
         m_MethodName: RotateDown
         m_Mode: 1
         m_Arguments:
@@ -8725,7 +8719,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max: 160
   Min: 0
-  textBox: {fileID: 0}
+  initAngle: 0
+  textBox: {fileID: 1478201196}
+  textEditor: {fileID: 336205891}
+  movePart: 2
 --- !u!1 &2061723457
 GameObject:
   m_ObjectHideFlags: 0
@@ -8950,7 +8947,6 @@ GameObject:
   - component: {fileID: 2117213196}
   - component: {fileID: 2117213195}
   - component: {fileID: 2117213194}
-  - component: {fileID: 2117213198}
   - component: {fileID: 2117213199}
   m_Layer: 0
   m_Name: Waist
@@ -9034,23 +9030,6 @@ Transform:
   m_Father: {fileID: 503498784}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2117213198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117213193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 764ee6dc4f5c02046a759d4b40523390, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body_transform: {fileID: 0}
-  Min_Limit: 0
-  Max_Limit: 0
-  showText: {fileID: 576797443}
-  LinesPrinted: 0
 --- !u!114 &2117213199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9065,7 +9044,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max: 240
   Min: -240
-  textBox: {fileID: 0}
+  initAngle: 0
+  textBox: {fileID: 1938707470}
+  textEditor: {fileID: 336205891}
+  movePart: 0
 --- !u!1 &2121259874
 GameObject:
   m_ObjectHideFlags: 0
