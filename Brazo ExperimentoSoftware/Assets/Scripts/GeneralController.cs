@@ -8,7 +8,7 @@ public class GeneralController : MonoBehaviour
 
     public void RotLeft(GameObject mobile){
         JointData jointScript = mobile.GetComponent<JointData>();
-        jointScript.Rotate(1);
+        jointScript.Rotate(false);
 
         /*Transform mobileRotation = mobile.GetComponent<Transform>();
         float minAngle = mobile.GetComponent<JointData>().Min;
@@ -20,7 +20,7 @@ public class GeneralController : MonoBehaviour
     }
     public void RotRight(GameObject mobile){
         JointData jointScript = mobile.GetComponent<JointData>();
-        jointScript.Rotate(0);
+        jointScript.Rotate(true);
         /*Transform mobileRotation = mobile.GetComponent<Transform>();
         float maxAngle = mobile.GetComponent<JointData>().Max;
         if(mobileRotation.eulerAngles.y + 5f > maxAngle) return;

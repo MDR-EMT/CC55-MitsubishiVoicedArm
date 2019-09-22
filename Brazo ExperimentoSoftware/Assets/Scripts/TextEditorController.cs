@@ -30,31 +30,6 @@ public class TextEditorController : MonoBehaviour
     }
 
     public void WriteCommands(commandLines order, GameObject mobile){
-        TextBox.text += order.ToString() + mobile.transform.eulerAngles.ToString() + "\n";
-    }
-
-    public void UpdateText(movParts option, GameObject mobile){
-        switch(option){
-            case movParts.WAIST:
-                WaistText.text = mobile.transform.eulerAngles.y.ToString();
-                break;
-            case movParts.SHOUDLER:
-                ShoulderText.text = mobile.transform.eulerAngles.y.ToString();
-                break;
-            case movParts.ELBOW:
-                ElbowText.text = mobile.transform.eulerAngles.y.ToString();
-                break;
-            case movParts.TWIST:
-                TwistText.text = mobile.transform.eulerAngles.y.ToString();
-                break;
-            case movParts.PITCH:
-                PitchText.text = mobile.transform.eulerAngles.y.ToString();
-                break;
-            case movParts.ROLL:
-                RollText.text = mobile.transform.eulerAngles.y.ToString();
-                break;
-            default:
-                break;
-        }
+        TextBox.text += order.ToString() +mobile.transform.position.ToString("F2") + mobile.transform.eulerAngles.ToString("F2") + "\n";
     }
 }
