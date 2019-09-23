@@ -7,12 +7,10 @@ public class TextEditorController : MonoBehaviour
 {
     // Start is called before the first frame update
     public Text TextBox;
-    public Text WaistText;
-    public Text ShoulderText;
-    public Text ElbowText;
-    public Text TwistText;
-    public Text PitchText;
-    public Text RollText;
+    public Text PosTextBox;
+
+    int textSize = 1;
+    int maxTextSize = 8;
 
     public enum commandLines {SAVE, LOAD, MOV, ROT, WHILE, WEND, OVRD, DEF,POS};
     public enum movParts {WAIST, SHOUDLER, ELBOW, TWIST, PITCH, ROLL};
@@ -20,16 +18,18 @@ public class TextEditorController : MonoBehaviour
     void Start()
     {
         TextBox.text ="";
+        PosTextBox.text = "";
 
-        WaistText.text ="";
-        ShoulderText.text ="";
-        ElbowText.text ="";
-        TwistText.text ="";
-        PitchText.text ="";
-        RollText.text ="";
+    }
+
+    public bool WritePositions(GameObject arm){
+        if(textSize > maxTextSize) return false;
+        PosTextBox.text += "P"+textSize+"= "+arm.transform.position.ToString("F2")+arm.transform.eulerAngles.ToString("F2")+"\n";
+        return true;
     }
 
     public void WriteCommands(commandLines order, GameObject mobile){
+        if(TextBox.text.Length > 680) TextBox.text = "";
         TextBox.text += order.ToString() +mobile.transform.position.ToString("F2") + mobile.transform.eulerAngles.ToString("F2") + "\n";
     }
 }
