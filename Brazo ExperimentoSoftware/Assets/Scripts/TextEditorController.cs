@@ -9,6 +9,8 @@ public class TextEditorController : MonoBehaviour
     public Text TextBox;
     public Text PosTextBox;
 
+    public Text nPos;
+
     int textSize = 1;
     int maxTextSize = 8;
 
@@ -19,17 +21,23 @@ public class TextEditorController : MonoBehaviour
     {
         TextBox.text ="";
         PosTextBox.text = "";
-
+        nPos.text = "0";
     }
 
     public bool WritePositions(GameObject arm){
         if(textSize > maxTextSize) return false;
         PosTextBox.text += "P"+textSize+"= "+arm.transform.position.ToString("F2")+arm.transform.eulerAngles.ToString("F2")+"\n";
+        textSize++;
         return true;
     }
 
-    public void WriteCommands(commandLines order, GameObject mobile){
+    public void WriteCommands(commandLines order, GameObject mobile = null, string variable = null){
         if(TextBox.text.Length > 680) TextBox.text = "";
-        TextBox.text += order.ToString() +mobile.transform.position.ToString("F2") + mobile.transform.eulerAngles.ToString("F2") + "\n";
+        if(mobile != null){
+            TextBox.text += order.ToString() +mobile.transform.position.ToString("F2") + mobile.transform.eulerAngles.ToString("F2") + "\n";
+        }else{
+            TextBox.text += order.ToString() +variable + "\n";
+        }
+        
     }
 }
