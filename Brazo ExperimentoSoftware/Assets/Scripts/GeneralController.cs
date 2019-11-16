@@ -25,11 +25,11 @@ public class GeneralController : MonoBehaviour
 
     public void RotLeft(GameObject mobile){
         JointData jointScript = mobile.GetComponent<JointData>();
-        jointScript.Rotate(false);
+        jointScript.Rotate(true);
     }
     public void RotRight(GameObject mobile){
         JointData jointScript = mobile.GetComponent<JointData>();
-        jointScript.Rotate(true);
+        jointScript.Rotate(false);
     }
 
     public void SavePosition(){
