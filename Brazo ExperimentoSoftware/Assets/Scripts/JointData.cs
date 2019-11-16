@@ -7,7 +7,7 @@ public class JointData : MonoBehaviour
 {
     public float Max;
     public float Min;
-    public float initAngle;
+    public float currentAngle;
     public JointData.AngleAxis angleWay;
     public Text JointTextBox;
     public TextEditorController textEditor;
@@ -29,41 +29,31 @@ public class JointData : MonoBehaviour
             default:
                 break;
         }
-        JointTextBox.text = initAngle.ToString("F2");
+        JointTextBox.text = currentAngle.ToString("F2");
     }
 
 
     public void Rotate(bool way){
+        int p = way ? 1 : -1;
+        float tempAngle = this.currentAngle + p*5f;
+        Debug.Log(tempAngle);
+        if(tempAngle > Max || tempAngle < Min) return;
+
         switch(angleWay){
             case AngleAxis.X:
-                if(way){
-                    if(this.gameObject.transform.eulerAngles.x + 5f > Max)return;
-                    this.gameObject.transform.Rotate(5f, 0f, 0f, Space.Self);
-                }else{
-                    if(this.gameObject.transform.eulerAngles.x - 5f < Min)return;
-                    this.gameObject.transform.Rotate(-5f, 0f, 0f, Space.Self);
-                }
-                JointTextBox.text = this.gameObject.transform.eulerAngles.x.ToString("F2");
+                this.gameObject.transform.Rotate(p*5f,0f,0f,Space.Self);
+                this.currentAngle = tempAngle;
+                JointTextBox.text = currentAngle.ToString("F2");
                 break;
             case AngleAxis.Y:
-                if(way){
-                    if(this.gameObject.transform.eulerAngles.y + 5f > Max)return;
-                    this.gameObject.transform.Rotate(0f, 5f, 0f, Space.Self);
-                }else{
-                    if(this.gameObject.transform.eulerAngles.y - 5f < Min)return;
-                    this.gameObject.transform.Rotate(0f, -5f, 0f, Space.Self);
-                }
-                JointTextBox.text = this.gameObject.transform.eulerAngles.y.ToString("F2");
+                this.gameObject.transform.Rotate(0f,p*5f,0f,Space.Self);
+                this.currentAngle = tempAngle;
+                JointTextBox.text = currentAngle.ToString("F2");
                 break;
             case AngleAxis.Z:
-                if(way){
-                    if(this.gameObject.transform.eulerAngles.z + 5f > Max)return;
-                    this.gameObject.transform.Rotate(0f, 0f, 5f, Space.Self);
-                }else{
-                    if(this.gameObject.transform.eulerAngles.z - 5f < Min)return;
-                    this.gameObject.transform.Rotate(0f, 0f, -5f, Space.Self);
-                }
-                JointTextBox.text = this.gameObject.transform.eulerAngles.z.ToString("F2");
+                this.gameObject.transform.Rotate(0f,0f,p*5f,Space.Self);
+                this.currentAngle = tempAngle;
+                JointTextBox.text = currentAngle.ToString("F2");
                 break;
             default:
                 break;

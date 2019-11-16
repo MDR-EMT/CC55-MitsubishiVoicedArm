@@ -1,6 +1,0 @@
-Para usar el programa ejecutar el "Brazo Experimento Software.exe"
-Usar el mouse para usar los botonoes dentro de la aplicación.
-Los archivos se guardarán en la carpeta "Brazo ExperimentoSoftware_Data" cuando se importe:
-	Ejecución_n.txt -> Codigo
-	Posn_n.txt -> Posiciones guardadas
-Para salir usar alt+f4
