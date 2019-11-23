@@ -103,14 +103,14 @@ public class GeneralController : MonoBehaviour
 
     public void SavePosition_String(){
         POS_script += "DEF POS P" + N_pos+"\n";
-        POS_script += RealPositions[RealPositions.Count - 1].ToString("F2") + "(7.0)\n";
+        POS_script += "P"+ N_pos + " = " + RealPositions[RealPositions.Count - 1].ToString("F2") + "(7,0)\n";
         POS_script += "MOV P"+N_pos++;
         POS_script += "\n";
     }
 
     Vector3 PositionToSave(){
         Vector3 tempVecPos = PartsArm[PartsArm.Length - 1].transform.position - Arm.transform.position;
-        tempVecPos = new Vector3 (NormalizePos(tempVecPos.x,5,400),NormalizePos(tempVecPos.y,5,400),NormalizePos(tempVecPos.z,6,865));
+        tempVecPos = new Vector3 (NormalizePos(tempVecPos.x,5,400),NormalizePos(tempVecPos.y,5,400),-NormalizePos(tempVecPos.z,6,865));
         return tempVecPos;
     }
 
