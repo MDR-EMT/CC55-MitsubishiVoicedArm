@@ -11,6 +11,8 @@ public class TextEditorController : MonoBehaviour
 
     public Text nPos;
 
+    public Text realText;
+
     int textSize = 1;
     int maxTextSize = 8;
 

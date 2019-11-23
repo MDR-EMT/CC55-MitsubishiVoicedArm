@@ -30,6 +30,7 @@ public class JointData : MonoBehaviour
                 break;
         }
         JointTextBox.text = currentAngle.ToString("F2");
+        Debug.Log(transform.eulerAngles);
     }
 
 

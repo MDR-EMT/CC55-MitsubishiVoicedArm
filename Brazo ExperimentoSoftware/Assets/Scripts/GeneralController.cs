@@ -12,15 +12,19 @@ public class GeneralController : MonoBehaviour
     public GameObject[] PartsArm;
     public List<List<Vector3>> Positions;
     public List<List<Quaternion>> Rotations;
-    public List<Vector3> armPosition;
-    public List<Quaternion> armRotation;
+    public List<Vector3> RealPositions;
+    public List<Vector3> RealAngles;
 
-    int timesGeneralText = 0;
-    int timesPosText = 0;
+    public string POS_script;
+    public int N_pos;
+
+    int timesScriptsText = 0;
 
     void Start() {
         Positions = new List<List<Vector3>>();
         Rotations = new List<List<Quaternion>>();
+        POS_script = "";
+        N_pos = 1;
     }
 
     public void RotLeft(GameObject mobile){
@@ -51,23 +55,23 @@ public class GeneralController : MonoBehaviour
         textScript.WriteCommands(TextEditorController.commandLines.LOAD, null,variable);
         
     }
+//Posicion: distancia entre el vértice final al centro del brazo
 
+//Posicion y orientacion en un vector de 6
+//P1 =(0,0,0,0,0,0) -180.0.180
+//DEF POS P1
+//P1 = (x,y,z)(7.0)
+//archiv.mb5
     public void ExportText(){
         if(textScript.TextBox.text.Length == 0 && textScript.PosTextBox.text.Length == 0) {return;}
         
-        string pathEjecucion = Application.dataPath + "/Ejecución_"+timesGeneralText+".txt";
-        string pathPos = Application.dataPath + "/Posn_"+timesPosText+".txt";
-        if(!File.Exists(pathEjecucion)){
-            File.WriteAllText(pathEjecucion,"\n");
-            timesGeneralText++;
-        }
-        File.AppendAllText(pathEjecucion,textScript.TextBox.text);
-        if(!File.Exists(pathPos)){
-            File.WriteAllText(pathPos,"\n");
-            timesPosText++;
+        string mainScript = Application.dataPath + "/Script_"+timesScriptsText+".mb5";
+        if(!File.Exists(mainScript)){
+            File.WriteAllText(mainScript,"\n");
+            timesScriptsText++;
         }
         Debug.Log("Data exported");
-        File.AppendAllText(pathPos,textScript.PosTextBox.text);
+        File.AppendAllText(mainScript,POS_script);
     }
 
     void SaveTransforms(){
@@ -79,6 +83,10 @@ public class GeneralController : MonoBehaviour
             tempRos.Add(part.transform.localRotation);
             //Debug.Log(tempRos[tempRos.Count-1]);
         }
+        RealPositions.Add(PositionToSave());
+        SavePosition_String();
+        RealAngles.Add(PartsArm[PartsArm.Length - 1].transform.eulerAngles);
+        
         Positions.Add(temPos);
         Rotations.Add(tempRos);
     }
@@ -93,7 +101,20 @@ public class GeneralController : MonoBehaviour
         }
     }
 
-    public void ImportText(){
+    public void SavePosition_String(){
+        POS_script += "DEF POS P" + N_pos+"\n";
+        POS_script += RealPositions[RealPositions.Count - 1].ToString("F2") + "(7.0)\n";
+        POS_script += "MOV P"+N_pos++;
+        POS_script += "\n";
+    }
 
+    Vector3 PositionToSave(){
+        Vector3 tempVecPos = PartsArm[PartsArm.Length - 1].transform.position - Arm.transform.position;
+        tempVecPos = new Vector3 (NormalizePos(tempVecPos.x,5,400),NormalizePos(tempVecPos.y,5,400),NormalizePos(tempVecPos.z,6,865));
+        return tempVecPos;
+    }
+
+    float NormalizePos(float posActual, float unityMaxValue, float realMaxValue){
+        return posActual*realMaxValue/unityMaxValue;
     }
 }
