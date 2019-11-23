@@ -72,6 +72,7 @@ public class GeneralController : MonoBehaviour
         }
         Debug.Log("Data exported");
         File.AppendAllText(mainScript,POS_script);
+        textScript.TextBox.text += "Code Exported as "+mainScript +"\n";
     }
 
     void SaveTransforms(){
